@@ -6,7 +6,8 @@
 <br>
 В файле `a_star_pca.py` есть функция под названием `adj_matrix()` ___ эта функция сохраняет полученные данные в csv файл под названием `djacency_matrix.csv`. 
 Пример сохранения данных в csv файл в этой функции<br>
-```with open('adjacency_matrix.csv', 'w', newline='') as csvfile:
+```
+with open('adjacency_matrix.csv', 'w', newline='') as csvfile:
         writer = csv.writer(csvfile, delimiter=';')
         header = [""] + [f"{y},{x}" for (y, x) in all_coor]
         writer.writerow(header)
