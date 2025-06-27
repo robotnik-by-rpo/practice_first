@@ -1,6 +1,17 @@
-###Инструкция по применения###<br>
+###Инструкция по применению###<br>
 Запуск программы осуществляется в файле `lake_inferface.py` --- это интерфейс программы.
 Есть уже готовые csv файлы программы: `res.csv`, `river_data.csv`.<br>
 Файл `river_data.csv` содержит координаты для матрицы 168х168. Прогрмма с этим файлом работает за 1 секунду и сразу выводит результат.<br>
 Файл `res.data` содердит координаты для матрицы 800х800. Программа обрабатывает этот файл очень долго из-за большого кол-во данных. Точное время не засекал.<br>
 <br>
+В файле `a_star_pca.py` есть функция под названием `adj_matrix()` ___ эта функция сохраняет полученные данные в csv файл под названием `djacency_matrix.csv`. 
+Пример сохранения данных в csv файл в этой функции<br>
+```with open('adjacency_matrix.csv', 'w', newline='') as csvfile:
+        writer = csv.writer(csvfile, delimiter=';')
+        header = [""] + [f"{y},{x}" for (y, x) in all_coor]
+        writer.writerow(header)
+        
+        for coord in all_coor:
+            row = [f"{coord[0]},{coord[1]}"] + [adj[coord].get(other_coord, 0) for other_coord in all_coor]
+            writer.writerow(row)
+```
