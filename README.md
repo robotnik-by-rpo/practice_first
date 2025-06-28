@@ -17,5 +17,5 @@ with open('adjacency_matrix.csv', 'w', newline='') as csvfile:
             row = [f"{coord[0]},{coord[1]}"] + [adj[coord].get(other_coord, 0) for other_coord in all_coor]
             writer.writerow(row)
 ```
-В эту мматрицу смежности записываются все вершины, которые попадались по пути алгоритму А*.<br>
+В эту мматрицу смежности записываются все вершины, которые попадались по пути алгоритму А*.
 
